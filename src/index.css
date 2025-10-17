@@ -1,11 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* Font imports - place these in your HTML <head> or at the top of your CSS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nata Sans", sans-serif;
+  font-family: "Inter", sans-serif; 
+  font-weight: 100;/* Changed to match imported fonts */
 }
 
 body {

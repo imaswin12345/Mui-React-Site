@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Box, Typography } from '@mui/material';
-import { styled } from '@mui/system';
-import CustomButton from './CustomButton';
-import logotitle from '../assets/logo.png';
+import React, { useState } from "react";
+import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+import CustomButton from "./CustomButton";
+import logotitle from "../assets/newlogo.png";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
@@ -32,45 +32,45 @@ function Header() {
   };
 
   const nav_titles = [
-    { path: '/', display: 'Home', icon: <HomeIcon /> },
-    { path: '/', display: 'Dishes', icon: <FeaturedPlayListIcon /> },
-    { path: '/', display: 'Services', icon: <MiscellaneousServicesIcon /> },
-    { path: '/', display: 'Contact', icon: <ContactsIcon /> },
+    { path: "/", display: "Home", icon: <HomeIcon /> },
+    { path: "/", display: "Dishes", icon: <FeaturedPlayListIcon /> },
+    { path: "/", display: "Services", icon: <MiscellaneousServicesIcon /> },
+    { path: "/", display: "Contact", icon: <ContactsIcon /> },
   ];
 
   const NavBarLinkBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     gap: theme.spacing(4),
     [theme.breakpoints.down("md")]: {
-      display: 'none'
-    }
+      display: "none",
+    },
   }));
 
   const NavBarLink = styled(Typography)(({ theme }) => ({
-    fontSize: '18px',
-    fontWeight: 'bold',
-    color: 'gray',
-    cursor: 'pointer',
-    '&:hover': {
-      color: 'white'
-    }
+    fontSize: "18px",
+    fontWeight: "bold",
+    color: "gray",
+    cursor: "pointer",
+    "&:hover": {
+      color: "white",
+    },
   }));
 
   const NavbarLogo = styled("img")(({ theme }) => ({
-    cursor: 'pointer',
+    cursor: "pointer",
     [theme.breakpoints.down("sm")]: {
-      height: "30px"
-    }
+      height: "30px",
+    },
   }));
 
   const CustomMenuIcon = styled(MenuIcon)(({ theme }) => ({
-    cursor: 'pointer',
-    display: 'none',
+    cursor: "pointer",
+    display: "none",
     marginRight: theme.spacing(2),
     [theme.breakpoints.down("md")]: {
-      display: 'block'
-    }
+      display: "block",
+    },
   }));
 
   // Drawer List content
@@ -95,20 +95,26 @@ function Header() {
   );
 
   return (
-    <Box sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '20px 40px',
-      backgroundColor: '#FED801'
-    }}>
-      
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "20px 40px",
+        backgroundColor: "#FED801",
+        margin: 0,
+        width: "100%",
+        boxSizing: "border-box"
+      }}
+    >
       {/* Left side: Logo + Links */}
-      <Box sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '2rem'
-      }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "2rem",
+        }}
+      >
         {/* Menu icon (only visible on mobile) */}
         <CustomMenuIcon onClick={toggleDrawer("left", true)} />
         <Drawer
@@ -125,7 +131,7 @@ function Header() {
         {/* Desktop Links */}
         <NavBarLinkBox>
           {nav_titles.map((item, index) => (
-            <NavBarLink key={index} variant='body2'>
+            <NavBarLink key={index} variant="body2">
               {item.display}
             </NavBarLink>
           ))}
@@ -133,15 +139,15 @@ function Header() {
       </Box>
 
       {/* Right side: Auth Buttons */}
-      <Box sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '1rem'
-      }}>
-        <NavBarLink variant='body2'>
-          Sign Up
-        </NavBarLink>
-        <CustomButton backgroundColor="#0F1B4C" color='#fff' buttonText={"Register"} />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          gap: "1rem",
+        }}
+      >
+        <CustomButton backgroundColor="green" color="#fff" buttonText={"SignUp"} />
+        <CustomButton backgroundColor="#0F1B4C" color="#fff" buttonText={"Register"} />
       </Box>
     </Box>
   );
